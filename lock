@@ -1,0 +1,17 @@
+#!/bin/bash
+echo Type the desired name of your encrypted archive:
+read file
+echo Type the relative destination of the archive you wish to encrypt:
+read dest
+echo
+tar -zcvf $file.tar $dest
+echo
+mcrypt $file.tar
+echo
+rm -R  $file.tar $dest
+echo "Your file is here:"
+pwd
+echo
+echo Filename:
+echo $file.tar.nc
+echo

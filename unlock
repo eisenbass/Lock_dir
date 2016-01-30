@@ -1,0 +1,9 @@
+#!/bin/bash
+echo Type the filename to decrypt without the extensions '".tar.nc"':
+read file
+echo
+mcrypt -d $file.tar.nc
+echo
+tar -zxvf $file.tar
+echo
+rm $file.tar $file.tar.nc
